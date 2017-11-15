@@ -9,7 +9,7 @@ const program = require('commander');
 const inquirer = require('inquirer');
 var prompt = inquirer.createPromptModule();
 program
-  .version('0.0.2')
+  .version('0.0.3')
   .option('-C, --chdir <path>', 'change the working directory')
   .option('-c, --config <path>', 'set config path. defaults to ./deploy.conf')
   .option('-T, --no-tests', 'ignore test hook')
