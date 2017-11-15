@@ -7,9 +7,10 @@ const fs = require('fs');
 const shelljs = require('shelljs');
 const program = require('commander');
 const inquirer = require('inquirer');
+const pkg = require('../package.json');
 var prompt = inquirer.createPromptModule();
 program
-  .version('0.0.5')
+  .version(`${pkg.version}`)
   .option('-C, --chdir <path>', 'change the working directory')
   .option('-c, --config <path>', 'set config path. defaults to ./deploy.conf')
   .option('-T, --no-tests', 'ignore test hook')
@@ -99,7 +100,7 @@ program
         if (!exists) {
           shelljs.exec(`mkdir ${realPath}`);
         }
-        shelljs.exec(`cp -r ${path.join(__dirname, '../template')}/* ${realPath}`, {silent:true}, function (code, stdout, stderr) {
+        shelljs.exec(`cp -r ${path.join(__dirname, './template')}/* ${realPath}`, {silent:true}, function (code, stdout, stderr) {
           if (code === 0) {
             console.log(`${styles.grey}`, `\n\n   cd ${projectInfo.name}`);
             console.log(`${styles.grey}`, '\n   npm install');
