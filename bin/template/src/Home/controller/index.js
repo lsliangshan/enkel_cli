@@ -33,7 +33,7 @@
 /**
  * Created by liangshan on 2017/11/13.
  */
-module.exports = class extends ls.controller.base {
+module.exports = class extends enkel.controller.base {
   init (http) {
     super.init(http);
   }
