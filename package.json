@@ -25,6 +25,10 @@
   "engines": {
     "node": ">= 0.12"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lsliangshan/enkel_cli.git"
+  },
   "licenses": [
     {
       "type": "MIT"
